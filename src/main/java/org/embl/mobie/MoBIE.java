@@ -1124,7 +1124,7 @@ public class MoBIE
 		final StorageLocation tableLocation = getTableLocation( dataSource.tableData );
 		final TableDataFormat tableFormat = getTableDataFormat( dataSource.tableData );
 
-		Table table = dataSource.preInit() ? TableOpener.open( tableLocation, tableFormat ) : null;
+		Table table = TableOpener.open( tableLocation, tableFormat );
 		final SegmentColumnNames segmentColumnNames = TableDataFormat.getSegmentColumnNames( table.columnNames() );
 		final TableSawAnnotatedSegmentCreator annotationCreator = new TableSawAnnotatedSegmentCreator( segmentColumnNames, table );
 
